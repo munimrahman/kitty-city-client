@@ -1,10 +1,10 @@
 const firebaseConfig = {
-    apiKey: "AIzaSyCgoZe05NZ5uy8Z1IDhbhtzkSnt_UxFnrg",
-    authDomain: "kitty-city-munimrh.firebaseapp.com",
-    projectId: "kitty-city-munimrh",
-    storageBucket: "kitty-city-munimrh.appspot.com",
-    messagingSenderId: "346717823748",
-    appId: "1:346717823748:web:4bd590156ab9a29638a651"
+    apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+    appId: process.env.REACT_APP_FIREBASE_APP_ID
 };
 
 export default firebaseConfig;
