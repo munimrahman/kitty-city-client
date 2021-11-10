@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../../../hooks/useAuth';
 
 const NavBar = () => {
+    const { user } = useAuth();
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
@@ -27,14 +29,14 @@ const NavBar = () => {
                             <li className="nav-item dropdown fw-bold">
                                 <Link className="nav-link dropdown-toggle" to="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="https://place-hold.it/50x50" className="user-img me-2" alt="" />
-                                    User Name
+                                    {user?.displayName}
                                 </Link>
                                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li className="d-flex flex-column align-items-center justify-content-center">
                                         <div className="w-25">
                                             <img src="https://place-hold.it/300x300" alt="" className="img-fluid" />
                                         </div>
-                                        <p className="my-2">User Name</p>
+                                        <p className="my-2">{user?.displayName}</p>
                                         <Link to="/dashboard" className="btn btn-primary">Dashboard</Link>
                                     </li>
                                     <hr className="w-75 mx-auto" />
