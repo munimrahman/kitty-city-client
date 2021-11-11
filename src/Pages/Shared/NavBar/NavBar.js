@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import useCart from '../../../hooks/useCart';
 
 const NavBar = () => {
     const { user } = useAuth();
+    const cartProducts = useCart();
     return (
         <div>
             <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
@@ -25,6 +27,9 @@ const NavBar = () => {
                             </li>
                             <li class="nav-item">
                                 <Link class="nav-link" to="/contact-us">Contact Us</Link>
+                            </li>
+                            <li class="nav-item">
+                                <Link class="nav-link" to="/cart">Cart: {cartProducts?.length}</Link>
                             </li>
                             <li className="nav-item dropdown fw-bold">
                                 <Link className="nav-link dropdown-toggle" to="" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

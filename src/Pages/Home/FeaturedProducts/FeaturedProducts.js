@@ -1,17 +1,20 @@
 import React from 'react';
+import useProducts from '../../../hooks/useProducts';
 import ProductCard from '../../Shop/ProductCard/ProductCard';
 
 const FeaturedProducts = () => {
+    const products = useProducts();
+    const featuredProducts = products?.slice(0, 6);
     return (
         <div className="container">
             <h2 className="text-center my-5">Featured Products</h2>
             <div class="row row-cols-1 row-cols-md-3 g-4">
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
-                <ProductCard></ProductCard>
+                {
+                    featuredProducts.map(product => <ProductCard
+                        key={product._id}
+                        product={product}
+                    ></ProductCard>)
+                }
             </div>
         </div>
     );

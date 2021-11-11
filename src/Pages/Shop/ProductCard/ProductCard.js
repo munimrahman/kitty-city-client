@@ -1,17 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const ProductCard = () => {
+const ProductCard = (props) => {
+    const { _id, name, price, categoty, des, img } = props.product || {};
     return (
         <div class="col mb-5">
             <div class="card h-100">
-                <img src="https://place-hold.it/300x300" class="card-img-top" alt="..." />
+                <img src={img} class="card-img-top" height="350px" alt="..." />
                 <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <h6>Price: $45</h6>
-                    <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.This content is a little bit longer.</p>
+                    <h5 class="card-title">{name}</h5>
+                    <h6>Price: ${price}</h6>
+                    <p class="card-text">{des}</p>
                     <div className="text-center">
-                        <Link to="/product-details">
+                        <Link to={`/product-details/${_id}`}>
                             <button className="btn btn-primary">Buy Now</button>
                         </Link>
                     </div>

@@ -1,7 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import swal from 'sweetalert';
+import useAuth from '../../../hooks/useAuth';
 
 const MyOrders = () => {
+    const { user } = useAuth()
+    const [myOrders, setMyOrders] = useState();
+    useEffect(() => {
+        fetch(`http://localhost:5000/orders?email=${user?.email}`)
+            .then(res => res.json())
+            .then(data => setMyOrders(data))
+    }, [])
+    // console.log(myOrders[0].item.cartProducts.length);
+    const handleDelete = id => {
+        swal({
+            title: "Are You Sure to Delete?",
+            text: "Once deleted, you will not be able to recover this order data!",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+        })
+            .then((willDelete) => {
+                if (willDelete) {
+                    fetch(`http://localhost:5000/orders/${id}`, {
+                        method: "DELETE",
+                        headers: { 'content-type': 'application/json' }
+                    })
+                        .then(res => res.json())
+                        .then(data => {
+                            if (data.deletedCount > 0) {
+                                swal("Order has been deleted!", {
+                                    icon: "success",
+                                });
+                            }
+                            const newOrders = myOrders.filter(order => order._id !== id)
+                            setMyOrders(newOrders)
+                        })
+
+                } else {
+                    swal("Order Info is Safe!");
+                }
+            });
+    }
     return (
         <div>
             <h1>This is My Orders!</h1>
@@ -18,54 +58,24 @@ const MyOrders = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        <tr className="text-center">
-                            <th scope="roEDw">zdyh</th>
-                            <td>xxxxjhxdfgj</td>
-                            <td>cfgujh</td>
-                            <td>
-                                fgyj
-                            </td>
-                            <td>
-                                <Link to="">
-                                    <button className="mx-1 btn btn-info text-white shadow-none py-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Order">
-                                        <i className="far fa-eye"></i>
-                                    </button>
-                                </Link>
-                                <button className="mx-1 btn btn-danger shadow-none py-1"><i className="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr className="text-center">
-                            <th scope="roEDw">zdyh</th>
-                            <td>xxxxjhxdfgj</td>
-                            <td>cfgujh</td>
-                            <td>
-                                fgyj
-                            </td>
-                            <td>
-                                <Link to="">
-                                    <button className="mx-1 btn btn-info text-white shadow-none py-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Order">
-                                        <i className="far fa-eye"></i>
-                                    </button>
-                                </Link>
-                                <button className="mx-1 btn btn-danger shadow-none py-1"><i className="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
-                        <tr className="text-center">
-                            <th scope="roEDw">zdyh</th>
-                            <td>xxxxjhxdfgj</td>
-                            <td>cfgujh</td>
-                            <td>
-                                fgyj
-                            </td>
-                            <td>
-                                <Link to="">
-                                    <button className="mx-1 btn btn-info text-white shadow-none py-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Order">
-                                        <i className="far fa-eye"></i>
-                                    </button>
-                                </Link>
-                                <button className="mx-1 btn btn-danger shadow-none py-1"><i className="fas fa-trash-alt"></i></button>
-                            </td>
-                        </tr>
+                        {
+                            myOrders?.map((myOrder, index) => <tr className="text-center">
+                                <th scope="roEDw">{index + 1}</th>
+                                <td>{myOrder?._id}</td>
+                                <td>{myOrder?.item.cartProducts.length}</td>
+                                <td>
+                                    {myOrder.orderStatus}
+                                </td>
+                                <td>
+                                    <Link to="">
+                                        <button className="mx-1 btn btn-info text-white shadow-none py-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Order">
+                                            <i className="far fa-eye"></i>
+                                        </button>
+                                    </Link>
+                                    <button onClick={() => handleDelete(myOrder?._id)} className="mx-1 btn btn-danger shadow-none py-1"><i className="fas fa-trash-alt"></i></button>
+                                </td>
+                            </tr>)
+                        }
 
                     </tbody>
                 </table>

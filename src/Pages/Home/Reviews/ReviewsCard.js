@@ -1,21 +1,26 @@
 import React from 'react';
+import Rating from 'react-rating';
 
-const ReviewsCard = () => {
+const ReviewsCard = (props) => {
+    const { name, rating, review } = props.review || {};
+
     return (
         <div className="col-12 col-md-4">
             <div className="d-flex">
                 <img src="https://place-hold.it/100x100" alt="" />
                 <div className="ms-3">
-                    <h6>User Name</h6>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
-                    <i class="fas fa-star text-warning"></i>
+                    <h6>{name}</h6>
+                    <Rating
+                        placeholderRating={rating}
+                        emptySymbol={<i class="text-warning far fa-star"></i>}
+                        placeholderSymbol={<i class="text-warning fas fa-star"></i>}
+                        fullSymbol={<i class="fas fa-star"></i>}
+                        readonly
+                    />
                 </div>
             </div>
             <div className="mt-3">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam non repudiandae voluptas, qui laudantium reiciendis esse. Illum animi architecto cum pariatur accusamus dolore nisi, maxime minima veniam. Accusamus, nesciunt porro.</p>
+                <p>{review}</p>
             </div>
         </div>
     );

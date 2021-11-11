@@ -10,8 +10,12 @@ import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import NavBar from './Pages/Shared/NavBar/NavBar';
+import Cart from './Pages/Shop/Cart/Cart';
+import CheckOut from './Pages/Shop/CheckOut/CheckOut';
+import OrderReceived from './Pages/Shop/OrderReceived/OrderReceived';
 import ProductDetails from './Pages/Shop/ProductDetails/ProductDetails';
 import ShopMainPage from './Pages/Shop/ShopMainPage/ShopMainPage';
+import UpdateOrder from './Pages/Shop/UpdateOrder/UpdateOrder';
 
 function App() {
   return (
@@ -29,7 +33,7 @@ function App() {
             <Route exact path="/shop">
               <ShopMainPage></ShopMainPage>
             </Route>
-            <PrivateRoute exact path="/product-details">
+            <PrivateRoute exact path="/product-details/:productId">
               <ProductDetails></ProductDetails>
             </PrivateRoute>
             <Route exact path="/blogs">
@@ -46,6 +50,18 @@ function App() {
             </Route>
             <Route path="/dashboard">
               <Dashboard></Dashboard>
+            </Route>
+            <Route path="/cart">
+              <Cart></Cart>
+            </Route>
+            <Route path="/check-out">
+              <CheckOut></CheckOut>
+            </Route>
+            <Route path="/order-received/:orderId">
+              <OrderReceived></OrderReceived>
+            </Route>
+            <Route path="/update-order/:updateOrderId">
+              <UpdateOrder></UpdateOrder>
             </Route>
             <Route exact path="/">
               <Home></Home>

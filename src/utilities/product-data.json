@@ -1,0 +1,72 @@
+[
+    {
+        "name": "PetSafe Bolt",
+        "category": "Cat",
+        "price": 19.92,
+        "des": "The Bolt features a Class IIIa laser with a 5mW max power output for a safe play experience; Requires 4 AA batteries (sold separately); For best performance, use only alkaline batteries",
+        "img": "https://i.ibb.co/gPrP44y/product-1.jpg"
+    },
+    {
+        "name": "Cat Window Perch",
+        "category": "Cat",
+        "price": 19.99,
+        "des": "Provides a 360° sunbathing cat shelves for cats, 3 Giant suction and 2mm thicker Stainless Steel cable enable it can hold up more than 40lb, apply to muti cats or large cats.",
+        "img": "https://i.ibb.co/Hnp7X2Q/product-2.jpg"
+    },
+    {
+        "name": "Odoland Cat Scratching Post",
+        "category": "Cat",
+        "price": 29.99,
+        "des": "The package contains 2 mushrooms (with screws), 2 sisal posts, 1 platform. Include assembly accessories. Scratching Post Size: 14x12inches , design for standard size cats from kitten to adults, except huge cats.",
+        "img": "https://i.ibb.co/3rBC4tJ/product-3.jpg"
+    },
+    {
+        "name": "Breakaway Cat Collar",
+        "category": "Cat",
+        "price": 9.99,
+        "des": "Each cat collar measures adjustable 7.5 to 10.8 inch, please measure your cat's neck girth before ordering, leave 2 fingers room when wearing for relaxation.",
+        "img": "https://i.ibb.co/4sNK3Ry/product-4.jpg"
+    },
+    {
+        "name": "Kitty City Large Cat Tunnel Bed",
+        "category": "Cat",
+        "price": 37.99,
+        "des": "Zip-together combination play Tunnel and cozy cat nap spot in one. Plush cat bed is comfortable enough for an all-day snooze. Circular Tunnel is perfect for a chase or cats who want to hide out of sight",
+        "img": "https://i.ibb.co/3dXTYzT/product-5.jpg"
+    },
+    {
+        "name": "Cat Teaser Toys",
+        "category": "Cat",
+        "price": 8.95,
+        "des": "Popular! Supervisor by Cat Owner! This cat wand toy set supervisor by cat owner, We pick out the most popular from Hundreds of cat toys to make sure your cats will love them.",
+        "img": "https://i.ibb.co/p3SVNnC/product-6.jpg"
+    },
+    {
+        "name": "CJPET Catnip Balls",
+        "category": "Cat",
+        "price": 11.99,
+        "des": " Grinding with fresh raw materials will maintain quality and freshness. The raw materials are catnip, matador, and insect gall. The percentage of raw materials in the total product is 85%, which is more than 15% greater than other similar products.",
+        "img": "https://i.ibb.co/fNz0wjy/product-7.jpg"
+    },
+    {
+        "name": "Cat Window Perch Hammock Seat",
+        "category": "Cat",
+        "price": 16.99,
+        "des": "SAVING SPACE AND EASY INSTALL -- This cat hammock-like hanging bed mounts easily onto a window or smooth surface to keep your cat comfy and entertained. Installs in seconds to any clean and non-porous surfaces, such as glass window or door.",
+        "img": "https://i.ibb.co/0ytm5B4/product-8.jpg"
+    },
+    {
+        "name": "Drinkwell Mini Pet Fountain",
+        "category": "Cat",
+        "price": 21.95,
+        "des": "PetSafe brand has been a trusted global leader in pet behavior, containment and lifestyle innovations for nearly 30 years; we help keep your pet healthy, safe and happy.",
+        "img": "https://i.ibb.co/RHpxNCV/product-9.jpg"
+    },
+    {
+        "name": "Geyecete Dog Apparel",
+        "category": "Cat",
+        "price": 18.99,
+        "des": "Collapsible design,for easy storage when not in use, and save space. This doy toy basket is no chemical smell and easy to use, perfect for holding pet supplies. It is easy to clean, just wipe it with a damp cloth.",
+        "img": "https://i.ibb.co/LJyq2YG/product-10.jpg"
+    }
+]
