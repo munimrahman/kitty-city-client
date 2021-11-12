@@ -6,7 +6,7 @@ const ManageProducts = () => {
     // const products = useProducts();
     const [products, setProducts] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://radiant-mesa-88609.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setProducts(data.products))
     }, [products])
@@ -21,7 +21,7 @@ const ManageProducts = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/products/${id}`, {
+                    fetch(`https://radiant-mesa-88609.herokuapp.com/products/${id}`, {
                         method: "DELETE",
                         headers: { 'content-type': 'application/json' }
                     })

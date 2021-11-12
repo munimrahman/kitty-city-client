@@ -6,7 +6,7 @@ const useCart = () => {
     const savedCart = getStoredCart();
     useEffect(() => {
         const keys = Object.keys(savedCart);
-        fetch('http://localhost:5000/products/byKeys', {
+        fetch('https://radiant-mesa-88609.herokuapp.com/products/byKeys', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

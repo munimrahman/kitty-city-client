@@ -5,7 +5,7 @@ import swal from 'sweetalert';
 const ManageOrders = () => {
     const [orders, setOrders] = useState();
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://radiant-mesa-88609.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [])
@@ -20,7 +20,7 @@ const ManageOrders = () => {
         })
             .then((willDelete) => {
                 if (willDelete) {
-                    fetch(`http://localhost:5000/orders/${id}`, {
+                    fetch(`https://radiant-mesa-88609.herokuapp.com/orders/${id}`, {
                         method: "DELETE",
                         headers: { 'content-type': 'application/json' }
                     })

@@ -17,7 +17,7 @@ const CheckOut = () => {
         // data.orderKey = { pass }
         data.orderDate = orderDate
         data.item = { cartProducts }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://radiant-mesa-88609.herokuapp.com/orders', {
             method: "POST",
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

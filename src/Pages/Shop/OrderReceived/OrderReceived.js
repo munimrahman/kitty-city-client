@@ -5,7 +5,7 @@ const OrderReceived = () => {
     const { orderId } = useParams();
     const [orderData, setOrderData] = useState({});
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${orderId}`)
+        fetch(`https://radiant-mesa-88609.herokuapp.com/orders/${orderId}`)
             .then(res => res.json())
             .then(data => setOrderData(data))
     }, [])

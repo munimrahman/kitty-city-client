@@ -9,14 +9,14 @@ const UpdateOrder = () => {
     const [order, setOrder] = useState({ address: '', city: '', country: '', des: '', desOptional: '', email: '', item: {}, name: '', orderDate: '', orderKey: {}, orderStatus: '', paymentMethod: {}, phone: '', zip: '', _id: '' })
     // const history = useHistory();
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${updateOrderId}`)
+        fetch(`https://radiant-mesa-88609.herokuapp.com/orders/${updateOrderId}`)
             .then(res => res.json())
             .then(data => setOrder(data))
     }, [])
 
     console.log(order);
     const handleUpdateOrder = () => {
-        fetch(`http://localhost:5000/orders/${updateOrderId}`, {
+        fetch(`https://radiant-mesa-88609.herokuapp.com/orders/${updateOrderId}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(order)
