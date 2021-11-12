@@ -44,7 +44,6 @@ const MyOrders = () => {
     }
     return (
         <div>
-            <h1>This is My Orders!</h1>
             <div>
                 <h4 className="text-center">My Orders</h4>
                 <table className="table">
@@ -64,10 +63,10 @@ const MyOrders = () => {
                                 <td>{myOrder?._id}</td>
                                 <td>{myOrder?.item.cartProducts.length}</td>
                                 <td>
-                                    {myOrder.orderStatus}
+                                    {myOrder?.orderStatus === 'CONFIRMED' ? <span className="badge bg-success">CONFIRMED</span> : <span className="badge bg-warning">PENDING</span>}
                                 </td>
                                 <td>
-                                    <Link to="">
+                                    <Link to={`/order-received/${myOrder?._id}`}>
                                         <button className="mx-1 btn btn-info text-white shadow-none py-1" data-bs-toggle="tooltip" data-bs-placement="bottom" title="View Order">
                                             <i className="far fa-eye"></i>
                                         </button>

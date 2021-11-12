@@ -1,0 +1,10 @@
+.footer-bg{
+    background-image: url(../../../images/footer-img-1.png);
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+.footer-subs{
+    background-color: #88D9DE;
+}
+

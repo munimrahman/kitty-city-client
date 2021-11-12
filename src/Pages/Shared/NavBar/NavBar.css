@@ -1,0 +1,12 @@
+.userImg{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #DC3545;
+    border-radius: 50px;
+}
+.userImgDropDown{
+    border-radius: 50%;
+}
+.hover-color:hover{
+    color: white !important;
+}

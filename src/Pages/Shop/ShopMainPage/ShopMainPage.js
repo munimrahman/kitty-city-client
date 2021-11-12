@@ -6,9 +6,9 @@ const ShopMainPage = () => {
     const products = useProducts([]);
     return (
         <div className="container">
-            <h1 className="text-center my-5">This is Shop Main page</h1>
+            <h1 className="my-5">Shop</h1>
             <div>
-                <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div className="row row-cols-1 row-cols-md-3 g-4">
                     {
                         products.map(product => <ProductCard
                             key={product._id}

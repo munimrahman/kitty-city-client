@@ -132,15 +132,40 @@ const CheckOut = () => {
 
                 </div>
                 <div className="col-12 col-md-3">
-                    <h3>Your Order</h3>
-                    <hr />
+                    <h4 className="text-center">Your order</h4>
+                    {/* <hr className="px-2" /> */}
                     <div>
-                        <p>Total: $456</p>
-                        <hr />
-                    </div>
-                    <button onClick={handleSubmit(onSubmit)} className="btn shadow-none btn-primary py-3 px-4 rounded-pill px-3 py-2">PLACE ORDER</button>
+                        <table className="table my-4">
+                            <tbody>
+                                <tr>
+                                    <th className="bg-secondary text-white">Products</th>
+                                    <th className="bg-secondary text-white text-center">Subtotals</th>
+                                </tr>
+                                {
+                                    cartProducts.map(cartItem => <tr>
+                                        <td>
+                                            {cartItem.name}
+                                        </td>
+                                        <td className="text-center v-align">${cartItem.price}</td>
+                                    </tr>)
+                                }
+                                <tr>
+                                    <th className="bg-secondary text-white">Tax</th>
+                                    <td className="text-center">$00</td>
+                                </tr>
+                                <tr>
+                                    <th className="bg-secondary text-white">Totals</th>
+                                    <td className="text-center fw-bold">$240</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
+                    </div>
+                    <div className="d-flex justify-content-center">
+                        <button onClick={handleSubmit(onSubmit)} className="btn shadow-none btn-danger px-4 rounded-pill px-3 py-2">PLACE ORDER</button>
+                    </div>
                 </div>
+
             </div>
         </div>
     );

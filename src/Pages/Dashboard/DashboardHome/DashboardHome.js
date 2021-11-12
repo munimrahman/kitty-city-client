@@ -1,11 +1,16 @@
 import React from 'react';
+import useAuth from '../../../hooks/useAuth';
+import avatar from '../../../images/avatar.jpg'
 
 const DashboardHome = () => {
+    const { user } = useAuth();
     return (
-        <div className="text-center">
-            <h1>This is Dash Board Home</h1>
-            <img src="https://place-hold.it/300x300" alt="" />
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Praesentium, illo veritatis tempora autem fugiat facilis natus aperiam vitae consequuntur assumenda non aut minus fugit adipisci dolore tenetur rem eaque quos!</p>
+        <div className="text-center py-4">
+            <div>
+                <img src={avatar} className="rounded pb-4" alt="" />
+                <h1>Hello {user?.displayName}!</h1>
+                <h1>Welcome to Kitty City Site Dashboard!</h1>
+            </div>
         </div>
     );
 };

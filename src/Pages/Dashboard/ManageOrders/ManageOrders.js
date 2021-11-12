@@ -43,7 +43,7 @@ const ManageOrders = () => {
 
     return (
         <div>
-            <h1>Manage All Orders Admin Page</h1>
+            <h3 className="text-center">Manage All Orders</h3>
             <div>
                 <table className="table">
                     <thead>
@@ -65,7 +65,6 @@ const ManageOrders = () => {
                                 <td>{order?._id}</td>
                                 <td>{order?.name}</td>
                                 <td>{order?.email}</td>
-                                <td>{order?.orderStatus}</td>
                                 <td>
                                     {order?.orderStatus === 'CONFIRMED' ? <span className="badge bg-success">APPROVED</span> : <span className="badge bg-warning">PENDING</span>}
                                 </td>

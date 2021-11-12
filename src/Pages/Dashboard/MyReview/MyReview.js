@@ -2,16 +2,17 @@ import React, { useEffect, useState } from 'react';
 import useAuth from '../../../hooks/useAuth';
 import ReactStars from "react-rating-stars-component";
 
+
 const MyReview = () => {
     const { user } = useAuth();
     const [review, setReview] = useState('');
     const [rating, setRating] = useState('5');
-
+    console.log(user);
     const handleReview = e => {
         setReview(e.target.value)
     }
     const handleOnSubmit = e => {
-        const userReview = { name: user?.displayName, rating: rating, review: review }
+        const userReview = { name: user?.displayName, img: user?.photoURL, rating: rating, review: review }
         fetch('https://radiant-mesa-88609.herokuapp.com/reviews', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
@@ -27,7 +28,7 @@ const MyReview = () => {
         e.preventDefault()
     }
 
-    const thirdExample = {
+    const userGivenRating = {
         size: 20,
         count: 5,
         isHalf: false,
@@ -42,19 +43,18 @@ const MyReview = () => {
     };
     return (
         <div>
-            <h1>This is My Review Page</h1>
-            <div>
-                <h4>Full stars rating only, a11y and other colors</h4>
+            <h4 className="text-center">Give Your Review Here!</h4>
+            <div className="d-flex justify-content-center">
                 {/* <ReactStars {...thirdExample} /> */}
                 <form onSubmit={handleOnSubmit}>
 
-                    <label>Rating</label> <br />
-                    <ReactStars {...thirdExample} />
+                    <label className="mb-2 fs-5">Rating</label> <br />
+                    <ReactStars {...userGivenRating} />
 
-                    <label>Review</label> <br />
-                    <textarea onBlur={handleReview} name="review" placeholder="Write Your Review Here!"></textarea> <br />
+                    <label className="mb-2 fs-5">Review</label> <br />
+                    <textarea onBlur={handleReview} name="review" rows='5' cols="30" placeholder="Write Your Review Here!"></textarea> <br />
 
-                    <input type="submit" />
+                    <input type="submit" className="btn btn-danger rounded-pill" />
                 </form>
             </div>
         </div>

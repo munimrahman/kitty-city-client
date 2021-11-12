@@ -44,7 +44,7 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <h1>Manage All Products Page</h1>
+            <h1 className="text-center">Manage All Products Page</h1>
             <div>
                 <table className="table">
                     <thead>

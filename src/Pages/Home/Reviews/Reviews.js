@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import ReviewsCard from './ReviewsCard';
+import { Swiper, SwiperSlide } from "swiper/react";
+import 'swiper/swiper-bundle.min.css'
+import 'swiper/swiper.min.css'
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
@@ -11,8 +14,8 @@ const Reviews = () => {
     }, [])
     return (
         <div className="container">
-            <h1 className="text-center mb-5">Client Reviews</h1>
-            <div className="row">
+            <h2 className="text-center mb-5 text-danger fw-bold">Client Reviews</h2>
+            <div className="row justify-content-center">
                 {
                     reviews?.map(review => <ReviewsCard
                         key={review._id}

@@ -50,7 +50,7 @@ const UpdateOrder = () => {
             <div>
                 <p>{order?.name}</p>
                 <p>{order?.email}</p>
-                <select onChange={handleOrderStatus} class="form-select w-25 mx-auto" aria-label="Default select example">
+                <select onChange={handleOrderStatus} className="form-select w-25 mx-auto" aria-label="Default select example">
                     <option value="PENDING">Pending</option>
                     <option value="CONFIRMED">Confirm</option>
                 </select>

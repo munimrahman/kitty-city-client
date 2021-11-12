@@ -8,6 +8,7 @@ import Blogs from './Pages/Blog/Blogs/Blogs';
 import ContactUs from './Pages/ContactUs/ContactUs';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import Home from './Pages/Home/Home/Home';
+import NotFound from './Pages/NotFound/NotFound';
 import Footer from './Pages/Shared/Footer/Footer';
 import NavBar from './Pages/Shared/NavBar/NavBar';
 import Cart from './Pages/Shop/Cart/Cart';
@@ -48,23 +49,23 @@ function App() {
             <Route exact path="/sign-up">
               <SignUp></SignUp>
             </Route>
-            <Route path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard></Dashboard>
-            </Route>
-            <Route path="/cart">
+            </PrivateRoute>
+            <PrivateRoute path="/cart">
               <Cart></Cart>
-            </Route>
-            <Route path="/check-out">
+            </PrivateRoute>
+            <PrivateRoute path="/check-out">
               <CheckOut></CheckOut>
-            </Route>
-            <Route path="/order-received/:orderId">
+            </PrivateRoute>
+            <PrivateRoute path="/order-received/:orderId">
               <OrderReceived></OrderReceived>
-            </Route>
-            <Route path="/update-order/:updateOrderId">
+            </PrivateRoute>
+            <PrivateRoute path="/update-order/:updateOrderId">
               <UpdateOrder></UpdateOrder>
-            </Route>
-            <Route exact path="/">
-              <Home></Home>
+            </PrivateRoute>
+            <Route exact path="*">
+              <NotFound></NotFound>
             </Route>
           </Switch>
           <Footer></Footer>

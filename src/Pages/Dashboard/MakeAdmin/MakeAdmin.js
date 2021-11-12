@@ -15,16 +15,21 @@ const MakeAdmin = () => {
             body: JSON.stringify(user)
         })
             .then(res => res.json())
-            .then(data => console.log(data))
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    alert('Admin Added Successfully!')
+                }
+            })
         e.preventDefault()
     }
     return (
         <div>
-            <h1>Make a Admin Page</h1>
-            <div>
+            <h4 className="text-center mb-4">Make a Admin</h4>
+            <div className="text-center">
                 <form onSubmit={handleMakeAdmin}>
-                    <input onBlur={handleOnBlur} type="email" />
-                    <input type="submit" />
+                    <label htmlFor="" className="mb-3">User Email</label> <br />
+                    <input className="mb-3" onBlur={handleOnBlur} type="email" /> <br />
+                    <input className="btn btn-danger rounded-pill" type="submit" value="Make Admin" />
                 </form>
             </div>
         </div>

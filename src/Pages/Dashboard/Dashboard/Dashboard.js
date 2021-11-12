@@ -12,29 +12,31 @@ import useAuth from '../../../hooks/useAuth';
 import AdminRoute from '../../Authentication/AdminRoute/AdminRoute';
 
 const Dashboard = () => {
-    const { admin } = useAuth();
+    const { admin, logOut } = useAuth();
     let { path, url } = useRouteMatch();
     return (
         <div className="container">
-            <h1 className="text-center">This is Dashboard</h1>
-            <div className="row bg-white rounded shadow p-4">
+            <h1 className="my-3">Dashboard</h1>
+            <div className="row bg-white rounded shadow p-4 mb-4">
                 <div className="col-12 col-md-2">
-                    <h6><Link to={`${url}`} className="text-decoration-none py-2 border-bottom border-dark">Dashboard</Link></h6>
+                    <h6 className="my-3"><Link to={`${url}`} className="text-decoration-none py-2 border-bottom border-dark">Dashboard</Link></h6>
 
                     {/* General Users Dashboard Features */}
-                    <h6><Link to={`${url}/my-orders`} className="text-decoration-none py-2 border-bottom border-dark">My Orders</Link></h6>
-                    <h6><Link to={`${url}/my-reviews`} className="text-decoration-none py-2 border-bottom border-dark">My Reviews</Link></h6>
-                    <h6><Link to={`${url}/payment`} className="text-decoration-none py-2 border-bottom border-dark">Payment</Link></h6>
+                    <h6 className="my-3"><Link to={`${url}/my-orders`} className="text-decoration-none py-2 border-bottom border-dark">My Orders</Link></h6>
+                    <h6 className="my-3"><Link to={`${url}/my-reviews`} className="text-decoration-none py-2 border-bottom border-dark">My Reviews</Link></h6>
+                    <h6 className="my-3"><Link to={`${url}/payment`} className="text-decoration-none py-2 border-bottom border-dark">Payment</Link></h6>
 
                     {/* Admins Dashboard Features */}
                     {admin && <>
-                        <h6><Link to={`${url}/manage-orders`} className="text-decoration-none py-2 border-bottom border-dark">Manage All Orders</Link></h6>
-                        <h6><Link to={`${url}/add-product`} className="text-decoration-none py-2 border-bottom border-dark">Add a Product</Link></h6>
-                        <h6><Link to={`${url}/manage-products`} className="text-decoration-none py-2 border-bottom border-dark">Manage Products</Link></h6>
-                        <h6><Link to={`${url}/make-admin`} className="text-decoration-none py-2 border-bottom border-dark">Make Admin</Link></h6>
+                        <h6 className="my-3"><Link to={`${url}/manage-orders`} className="text-decoration-none py-2 border-bottom border-dark">Manage All Orders</Link></h6>
+                        <h6 className="my-3"><Link to={`${url}/add-product`} className="text-decoration-none py-2 border-bottom border-dark">Add a Product</Link></h6>
+                        <h6 className="my-3"><Link to={`${url}/manage-products`} className="text-decoration-none py-2 border-bottom border-dark">Manage Products</Link></h6>
+                        <h6 className="my-3"><Link to={`${url}/make-admin`} className="text-decoration-none py-2 border-bottom border-dark">Make Admin</Link></h6>
                     </>}
 
-                    <h6>Log Out</h6>
+                    <h6 onClick={logOut} className="text-primary cursor border-bottom border-dark  pb-2 my-2">
+                        Log Out
+                    </h6>
                 </div>
                 <div className="col-12 col-md-10 border-start">
                     <Switch>

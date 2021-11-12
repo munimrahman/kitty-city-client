@@ -1,0 +1,9 @@
+.info-box{
+    border: none;
+    border-radius: 30px;
+}
+.icn-dev{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+}

@@ -42,7 +42,7 @@ const AddProduct = () => {
     };
     return (
         <div>
-            <h1>Add a Product</h1>
+            <h1 className="text-center">Add a Product</h1>
             <div>
                 <div className="d-flex justify-content-center">
                     <form className="mt-4 w-75" onSubmit={handleSubmit(onSubmit)}>

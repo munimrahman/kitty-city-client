@@ -15,7 +15,7 @@ const HeroSection = () => {
                     <p className="text-end pe-5 text-danger fw-bold">only $39.99</p>
                     <img src={dogClothe} className="w-50" alt="" /> <br />
                     <Link to="/shop">
-                        <button className="btn btn-danger rounded-pill shadow-none mt-4 py-2 px-4">Explore More</button>
+                        <button className="btn btn-danger rounded-pill shadow-none mt-4 mb-5 py-2 px-4">Explore More</button>
                     </Link>
                 </div>
                 <div className="col-12 col-md-6 text-center">
